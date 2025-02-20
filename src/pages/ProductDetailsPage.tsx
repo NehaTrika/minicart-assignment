@@ -13,6 +13,8 @@ interface Product {
   description: string;
   link: string;
 }
+const BASE_URL = 'http://localhost:3000'
+
 
 const ProductDetailPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -24,16 +26,11 @@ const ProductDetailPage: React.FC = () => {
 
   useEffect(() => {
     const loadProductDetail = async () => {
-      const url = `https://trika.vtexcommercestable.com.br/api/io/_v/api/intelligent-search/product_search/?simulationBehavior=default&count=100&page=1&locale=en-US`;
-      const url1 = `http://localhost:3000/?target=${url}`;
+      const url = `${BASE_URL}/api/io/_v/api/intelligent-search/product_search//?simulationBehavior=default&count=100&page=1&locale=en-US`;
 
       try {
-        const response = await axios.get(url1, {
-          headers: {
-            'X-VTEX-API-AppKey': 'vtexappkey-trika-RQVMBT',
-            'X-VTEX-API-AppToken': 'NDOGKOCKISYSJCPIFCJCWSSNESUNBXMVLYRTHVSQIFOJWMSUICYPHJXJHHPFLBFUEUUXELNTWPWKKKXQQQKLUKJEYSGIGTRQSDSRIRSWWMJTRXPXORBSNPMBTEHZULPN',
-            'Content-Type': 'application/json',
-          },
+        const response = await axios.get(url, {
+          
         });
 
         if (response.status === 200) {

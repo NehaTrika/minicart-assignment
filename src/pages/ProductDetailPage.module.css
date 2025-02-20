@@ -1,4 +1,3 @@
-
 .container {
   padding: 20px;
   display: flex;
@@ -11,6 +10,7 @@
   justify-content: center;
   max-width: 1000px;
   margin-top: 20px;
+  width: 100%; 
 }
 
 .imageContainer {
@@ -26,8 +26,8 @@
 }
 
 .productInfo {
-  
   max-width: 500px;
+  width: 100%;
 }
 
 .productInfo h1 {
@@ -71,22 +71,11 @@
   background-color: rgb(84, 60, 177);
 }
 
-.viewLink {
-  display: block;
-  margin-top: 20px;
-  color: blue;
-  text-decoration: underline;
-}
-
-.viewLink:hover {
-  color: darkblue;
-}
 
 .error {
   color: red;
   font-size: 1.2rem;
 }
-
 
 .popup {
   position: fixed;
@@ -106,3 +95,57 @@
   margin: 0;
 }
 
+@media (max-width: 768px) {
+  .productDetail {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainer {
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .productImage {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .productInfo {
+    max-width: 100%;
+  }
+
+  .productInfo h1 {
+    font-size: 1.6rem;
+  }
+
+  .productInfo p {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .quantitySection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quantityInput {
+    width: 50px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .addToCartButton {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .popup {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
