@@ -1,0 +1,32 @@
+
+.footer {
+    background-color: #3d4176;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .links {
+    margin-top: 10px;
+  }
+  
+  .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+
+  
