@@ -4,6 +4,7 @@ import { useParams} from 'react-router-dom';
 import { useCart } from '../context/CartContext'; 
 import styles from './ProductDetailPage.module.css'; 
 import MiniCart from '../components/MiniCart/Minicart';
+import { API_BASE_URL } from '../contants';
 
 interface Product {
   id: string;
@@ -13,8 +14,6 @@ interface Product {
   description: string;
   link: string;
 }
-const BASE_URL = 'http://localhost:3000'
-
 
 const ProductDetailPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -26,7 +25,7 @@ const ProductDetailPage: React.FC = () => {
 
   useEffect(() => {
     const loadProductDetail = async () => {
-      const url = `${BASE_URL}/api/io/_v/api/intelligent-search/product_search//?simulationBehavior=default&count=100&page=1&locale=en-US`;
+      const url = `${API_BASE_URL}/api/io/_v/api/intelligent-search/product_search//?simulationBehavior=default&count=100&page=1&locale=en-US`;
 
       try {
         const response = await axios.get(url, {

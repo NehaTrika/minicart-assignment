@@ -5,6 +5,7 @@ import ProductCard from '../components/ProductCard/ProductCard';
 import styles from './HomePage.module.css'; 
 import MiniCart from '../components/MiniCart/Minicart';
 import { useCart } from '../context/CartContext';
+import { API_BASE_URL } from '../contants';
 
 interface Product {
   id: string;
@@ -16,8 +17,6 @@ interface Product {
   quantity?: number;
 }
 
-// https://trika.vtexcommercestable.com.br
-const BASE_URL = 'http://localhost:3000'
 
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -28,7 +27,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     const loadProducts = async () => {
-      const url = `${BASE_URL}/api/io/_v/api/intelligent-search/product_search//?simulationBehavior=default&count=100&page=1&locale=en-US`;
+      const url = `${API_BASE_URL}/api/io/_v/api/intelligent-search/product_search//?simulationBehavior=default&count=100&page=1&locale=en-US`;
 
       try {
 
